@@ -14,9 +14,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import vn.com.fpt.edu.poromo.R;
+import vn.com.fpt.edu.poromo.Service;
 import vn.com.fpt.edu.poromo.login.model.User;
-import vn.com.fpt.edu.poromo.productlist.ProductListController;
+import vn.com.fpt.edu.poromo.productList.ProductListController;
+import vn.com.fpt.edu.poromo.share.Utils;
 
 public class LoginController extends AppCompatActivity {
     private TextView tvRegister;
@@ -24,7 +31,6 @@ public class LoginController extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private List<User> listUsers = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -61,7 +67,9 @@ public class LoginController extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter username and password, then try again!", Toast.LENGTH_LONG).show();
                     return;
                 }
-                login(username, password, listUsers);
+
+                sendLoginRequest(new User("bumchiu", "bumchiubumchiu"));
+
                 if (login(username, password, listUsers)) {
                     Intent intent = new Intent(LoginController.this, ProductListController.class);
                     startActivity(intent);
@@ -99,5 +107,33 @@ public class LoginController extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    private void sendLoginRequest(User u) {
+        if (u == null) {
+            return;
+        }
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Utils.PATH)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        Service service = retrofit.create(Service.class);
+
+        Call<User> call = service.logIn(u.getUsername(), u.getPassword());
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if(!response.isSuccessful()) {
+                    System.out.println(response.code());
+                    return;
+                }
+                System.out.println(response.body().getUsername());
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                System.out.println(t.getMessage());
+            }
+        });
     }
 }

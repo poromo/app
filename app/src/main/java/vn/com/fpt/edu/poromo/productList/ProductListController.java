@@ -1,4 +1,4 @@
-package vn.com.fpt.edu.poromo.productlist;
+package vn.com.fpt.edu.poromo.productList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

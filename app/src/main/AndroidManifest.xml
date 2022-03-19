@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Poromo">
         <activity
-            android:name=".productlist.ProductListController"
+            android:name=".productList.ProductListController"
             android:exported="false" />
         <activity
             android:name=".login.RegisterController"
