@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Poromo</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_into_a_different_account_or_create_a_new_one">Sign into a different account or create a new one
+    </string>
+
+    <string name="title_activity_list_product">ListProduct</string>
+
+    <string name="click_here_to_join_now">Click here to join now.</string>
+    <string name="action_settings">Settings</string>
 </resources>

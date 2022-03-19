@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:theme="@style/Theme.Poromo.LoginController"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".MainActivity"
+        android:background="#EFEFEF" android:paddingLeft="16dp" android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:layout_marginBottom="120dp"
+                android:padding="24dp">
+                <TextView
+                    android:text="WELCOME BACK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvHeader"
+                    android:textSize="22dp"
+                    android:letterSpacing="0.3"
+                    android:textColor="@color/black"
+                    android:gravity="center_horizontal" android:fontFamily="@font/futura"
+                    android:layout_marginBottom="30dp" android:layout_marginTop="24dp"/>
+                <TextView
+                    android:text="EMAIL ADDRESS"
+                    android:textSize="15sp"
+                    android:letterSpacing="0.2"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    android:fontFamily="@font/futura"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:background="@drawable/textview_border"
+                    android:padding="10dp"
+                    android:id="@+id/etEmail"
+                    android:hint="@string/prompt_email"
+                    android:layout_marginBottom="24dp"
+                    android:minHeight="48dp"/>
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:text="PASSWORD"
+                    android:textSize="15sp"
+                    android:letterSpacing="0.2"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/futura"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:padding="10dp"
+                    android:background="@drawable/textview_border"
+                    android:id="@+id/etPassword"
+                    android:hint="@string/prompt_password"
+                    android:layout_marginBottom="24dp"
+                    android:minHeight="48dp"/>
+
+                <Button
+                    android:id="@+id/btnSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#020202"
+                    android:fontFamily="@font/futura"
+                    android:letterSpacing="0.2"
+                    android:text="Sign In"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:theme="@style/Theme.Poromo" />
+                <TextView
+                    android:text="Forgot password?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView8" android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp" android:gravity="center_horizontal"/>
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider"
+                    />
+                <TextView
+                    android:text="NOT YOU?"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/futura"
+                    android:layout_height="wrap_content" android:id="@+id/textView9"
+                    android:gravity="center_horizontal" android:layout_marginTop="12dp"/>
+                <TextView
+                    android:text="@string/click_here_to_join_now"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tvRegister"
+                    android:gravity="center_horizontal" android:layout_marginBottom="24dp"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+            <TextView
+                android:text="Privacy Policy | Terms and Conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView11"
+                android:layout_gravity="bottom|center_horizontal"/>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
